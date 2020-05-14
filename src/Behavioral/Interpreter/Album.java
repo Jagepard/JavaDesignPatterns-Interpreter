@@ -3,7 +3,7 @@
  * @license https://mit-license.org/ MIT
  */
 
-package Behavioral.Iterator;
+package Behavioral.Interpreter;
 
 public class Album implements AlbumInterface {
     private final String name;

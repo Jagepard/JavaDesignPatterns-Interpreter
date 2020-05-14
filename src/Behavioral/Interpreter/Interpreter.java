@@ -3,7 +3,7 @@
  * @license https://mit-license.org/ MIT
  */
 
-package Behavioral.Iterator;
+package Behavioral.Interpreter;
 
 import java.util.ArrayList;
 import java.util.List;
