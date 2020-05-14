@@ -9,18 +9,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Interpreter implements InterpreterInterface {
-    private List<AlbumInterface> registry = new ArrayList<>();
+    private final List<AlbumInterface> registry = new ArrayList<>();
 
     @Override
-    public void interpret(String input) {
+    public String interpret(String input) {
         String[] exploded = input.split(" ");
 
         for (String value : exploded) {
             if (this.isNumeric(value)) {
                 int number = Integer.parseInt(value) - 1;
-                this.getDataFromRegistry(exploded, this.registry.get(number));
+                return this.getDataFromRegistry(exploded, this.registry.get(number));
             }
         }
+
+        return input;
     }
 
     public void addAlbumToRegistry(AlbumInterface album) {
@@ -31,18 +33,15 @@ public class Interpreter implements InterpreterInterface {
         return str != null && str.matches("[-+]?\\d*\\.?\\d+");
     }
 
-    private void getDataFromRegistry(String[] exploded, AlbumInterface item)
+    private String getDataFromRegistry(String[] exploded, AlbumInterface item)
     {
-        for (String value : exploded) {
-            if (value.equals("album")) {
-                System.out.printf("%s ", item.getName());
-            }
+        StringBuilder output = new StringBuilder();
 
-            if (value.equals("author")) {
-                System.out.printf("%s ", item.getAuthor());
-            }
+        for (String value : exploded) {
+            if (value.equals("album")) output.append(item.getName()).append(" ");
+            if (value.equals("author")) output.append(item.getAuthor()).append(" ");
         }
 
-        System.out.print("\n");
+        return output.toString();
     }
 }

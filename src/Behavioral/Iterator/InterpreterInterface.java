@@ -6,5 +6,5 @@
 package Behavioral.Iterator;
 
 public interface InterpreterInterface {
-    void interpret(String input);
+    String interpret(String input);
 }
