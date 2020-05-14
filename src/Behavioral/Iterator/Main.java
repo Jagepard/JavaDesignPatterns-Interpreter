@@ -11,9 +11,10 @@ public class Main {
         Interpreter interpreter = new Interpreter();
         interpreter.addAlbumToRegistry(new Album("Korn", "Untouchables"));
         interpreter.addAlbumToRegistry(new Album("Deftones", "Adrenaline"));
-        interpreter.interpret("album 2");
-        interpreter.interpret("album author 2");
-        interpreter.interpret("album author 1");
-        interpreter.interpret("author 1");
+
+        System.out.println(interpreter.interpret("album 2"));
+        System.out.println(interpreter.interpret("album author 2"));
+        System.out.println(interpreter.interpret("album author 1"));
+        System.out.println(interpreter.interpret("author 1"));
     }
 }

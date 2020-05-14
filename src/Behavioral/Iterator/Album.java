@@ -6,8 +6,8 @@
 package Behavioral.Iterator;
 
 public class Album implements AlbumInterface {
-    private String name;
-    private String author;
+    private final String name;
+    private final String author;
 
     public Album(String author, String name) {
         this.name   = name;
