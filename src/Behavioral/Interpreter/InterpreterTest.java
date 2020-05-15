@@ -1,3 +1,8 @@
+/*
+ * @author  : Jagepard <jagepard@yandex.ru>
+ * @license https://mit-license.org/ MIT
+ */
+
 package Behavioral.Interpreter;
 
 import org.junit.jupiter.api.BeforeEach;
